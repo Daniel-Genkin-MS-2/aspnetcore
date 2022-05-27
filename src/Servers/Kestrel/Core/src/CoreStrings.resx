@@ -668,4 +668,10 @@ For more information on configuring HTTPS see https://go.microsoft.com/fwlink/?l
   <data name="Http3ControlStreamErrorInitializingOutbound" xml:space="preserve">
     <value>Error initializing outbound control stream.</value>
   </data>
+  <data name="ConnectRequestsWithProtocolRequireSchemeAndPath" xml:space="preserve">
+    <value>'CONNECT' requests with ':protocol' require ':scheme' and ':path'.</value>
+  </data>
+  <data name="ProtocolRequiresConnect" xml:space="preserve">
+    <value>':protocol' is only allowed with the 'CONNECT' method.</value>
+  </data>
 </root>
