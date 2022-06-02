@@ -31,6 +31,7 @@ public class KnownHeaders
         HeaderNames.Method,
         HeaderNames.Authority,
         HeaderNames.Host,
+        HeaderNames.Protocol,
     };
 
     public static readonly string[] DefinedHeaderNames = typeof(HeaderNames).GetFields(BindingFlags.Static | BindingFlags.Public).Select(h => h.Name).ToArray();
@@ -147,6 +148,7 @@ public class KnownHeaders
             HeaderNames.TraceParent,
             HeaderNames.TraceState,
             HeaderNames.Baggage,
+            HeaderNames.Protocol,
         })
         .Concat(corsRequestHeaders)
         .OrderBy(header => !requestPrimaryHeaders.Contains(header))
