@@ -49,6 +49,41 @@ await host.RunAsync();
 
 
 
+/* JS CLIENT SIDE:
+let CERTIFICATE = "dCoAeRVMaJw44nC5eIwipNq8kpFnZ6pN9j4qEvNCAFc=";
+
+let transport = new WebTransport("https://127.0.0.1:5007", {
+    serverCertificateHashes:[
+      {
+            algorithm: "sha-256",
+            value: Uint8Array.from(atob(CERTIFICATE), c => c.charCodeAt(0))
+        }]
+    })
+
+await transport.ready;
+let incomingStreamReader = transport.incomingUnidirectionalStreams.getReader();
+let {value, done} = await incomingStreamReader.read();
+
+let streamDataReader = value.getReader();
+let data = await streamDataReader.read();
+
+transport.close();
+
+let msg = "";
+data.value.forEach(x => msg += String.fromCharCode(x));
+console.log("RECEIVED FROM SERVER:\n" + msg);
+*/
+
+
+
+
+
+
+
+
+
+
+
 
 static X509Certificate2 GenerateManualCertificate()
 {

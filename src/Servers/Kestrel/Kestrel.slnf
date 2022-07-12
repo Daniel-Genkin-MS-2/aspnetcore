@@ -43,6 +43,7 @@
       "src\\Servers\\Kestrel\\Transport.Sockets\\src\\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.csproj",
       "src\\Servers\\Kestrel\\perf\\Microbenchmarks\\Microsoft.AspNetCore.Server.Kestrel.Microbenchmarks.csproj",
       "src\\Servers\\Kestrel\\samples\\Demo1\\Demo1.csproj",
+      "src\\Servers\\Kestrel\\samples\\Demo2\\Demo2.csproj",
       "src\\Servers\\Kestrel\\samples\\Http2SampleApp\\Http2SampleApp.csproj",
       "src\\Servers\\Kestrel\\samples\\Http3SampleApp\\Http3SampleApp.csproj",
       "src\\Servers\\Kestrel\\samples\\HttpClientApp\\HttpClientApp.csproj",

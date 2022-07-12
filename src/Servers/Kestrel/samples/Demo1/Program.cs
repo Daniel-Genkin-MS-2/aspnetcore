@@ -29,6 +29,7 @@ host.Run(async (context) =>
     {
         return;
     }
+
     var session = await feature.AcceptAsync(CancellationToken.None);
     ConnectionContext? stream = null;
     IStreamDirectionFeature? direction = null;
@@ -76,6 +77,56 @@ host.Run(async (context) =>
 });
 
 await host.RunAsync();
+
+
+
+
+
+
+/* JS client side
+let CERTIFICATE = "dCoAeRVMaJw44nC5eIwipNq8kpFnZ6pN9j4qEvNCAFc=";
+
+let transport = new WebTransport("https://127.0.0.1:5007", {
+    serverCertificateHashes:[
+      {
+            algorithm: "sha-256",
+            value: Uint8Array.from(atob(CERTIFICATE), c => c.charCodeAt(0))
+        }]
+    })
+
+await transport.ready;
+let stream = await transport.createBidirectionalStream();
+let writer = stream.writable.getWriter();
+let reader = stream.readable.getReader();
+
+let messageIn = "WebTransport is awesome!";
+let messageInBytes = messageIn.split("").map(x => (x).charCodeAt(0));
+
+console.log("SENDING TO SERVER:\n" + messageIn);
+
+await writer.write(Uint8Array.from(messageInBytes));
+let {value, done} = await reader.read();
+
+let messageOut = "";
+value.forEach(x => messageOut += String.fromCharCode(x));
+console.log("RECEIVED FROM SERVER:\n" + messageOut);
+
+writer.close();
+reader.cancel();
+transport.close();
+ */
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
